@@ -1,0 +1,117 @@
+:root {
+    --my-padding: 0.4rem;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    color: rgb(2, 12, 21);
+    display: grid;
+    gap: 10px;  
+    grid-template-columns: 0.4fr 0.7fr;
+    grid-template-rows: 0.25fr 1.5fr 0.4fr 0.5fr 0.3fr;
+    grid-template-areas: 
+    "nav menu"
+    "content1 content1"
+    "main content2"
+    "main content3"
+    "footer footer"
+    ;
+
+    height: 100vh;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+nav{
+    align-items: center;
+    display: grid;
+    background-color: rgb(6, 43, 31);
+    grid-area: nav;
+    padding: var(--my-padding);
+}
+
+.menu{
+    align-items: center;
+    display: grid;
+    background-color: aquamarine;
+    grid-area: menu;
+    padding: var(--my-padding);
+}
+.content1 {
+    align-items: center;
+    display: grid;
+    background-color: rgb(135, 112, 84);
+    grid-area: content1;
+    padding: var(--my-padding);
+}
+
+.content2 {
+    align-items: center;
+    display: grid;
+    background-color: rgb(207, 43, 100);
+    grid-area: content2;
+    padding: var(--my-padding);
+}
+
+.content3 {
+    align-items: center;
+    display: grid;
+    background-color: rgb(200, 27, 27);
+    grid-area: content3;
+    padding: var(--my-padding);
+}
+
+main{
+    align-items: center;
+    display: grid;
+    background-color: rgb(224, 109, 8);
+    grid-area: main;
+    padding: var(--my-padding);
+}
+
+footer{
+    align-items: center;
+    display: grid;
+    background-color: rgb(180, 242, 117);
+    grid-area: footer;
+    padding: var(--my-padding);
+}
+
+@media (max-width: 1024px){
+    
+    .container{
+        grid-template-columns: 0.6fr 1fr 0.5fr;
+        grid-template-rows: 0.25fr 1fr 1.5fr 0.8fr 0.5fr;
+        grid-template-areas:
+            "nav nav nav"     
+            "content1 content1 content1"
+            "menu main main"
+            "menu footer footer"
+            "menu content3 content2"
+        ;
+    }
+
+}
+
+@media (max-width: 480px){
+
+    .container{
+        gap: 0;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.25fr 0.25fr 0.75fr 1fr 0.5fr 0.5fr 0.5fr;
+        grid-template-areas: 
+        "nav"
+        "menu"
+        "content1"
+        "main"
+        "footer"
+        "content3"
+        "content2"
+        ;
+    }
+}
